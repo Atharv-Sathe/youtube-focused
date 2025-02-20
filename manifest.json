@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Recommendation Blocker",
+  "version": "1.0",
+  "description": "Blocks YouTube recommendations to help you stay focused.",
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "tabs", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
